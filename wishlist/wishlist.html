@@ -74,6 +74,17 @@
  
 
     <h3 class="wishhead">My Wishlist <span class="wishcount"> </span> </h3>
+    <div id="wishlist-notification">
+        <p id="wishlist-notification" style="display: none; color: green;">Let's make your wish come true!</p>
+    </div>
+    
+
+    <div  class="wallet-container" >
+        <h3>Wallet</h3>
+        <p>Balance: <span id="wallet-balance">$0.00</span></p>
+        <button id="add-money-button">Add Money</button>
+        <button id="remove-money-button">Remove Money</button>
+    </div>
     
     <div class="container">
         
@@ -149,6 +160,7 @@
         </section>
         
    </footer>
+   <script src="../Common Files/walletNotification.js"></script>
 </body>
 </html>
 <script src="../wishlist/wishlist.js"></script>

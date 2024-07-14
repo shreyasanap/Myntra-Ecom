@@ -5,6 +5,79 @@ var wisharr =JSON.parse(localStorage.getItem("wishListObj"))||[];
 var itemcount = wisharr.length;
 document.querySelector(".wishcount").innerText =` ${itemcount} Items`
 
+// // Function to remove money from the wallet
+function removeMoneyFromWallet() {
+    var amountToRemove = parseFloat(prompt("Enter amount to remove from wallet:", "0"));
+    var walletBalance = getWalletBalance();
+
+    if (!isNaN(amountToRemove) && amountToRemove > 0) {
+        if (amountToRemove <= walletBalance) {
+            walletBalance -= amountToRemove;
+            localStorage.setItem("walletBalance", walletBalance);
+            updateWalletDisplay();
+            checkWalletBalance();
+        } else {
+            alert("Insufficient balance in wallet.");
+        }
+    } else {
+        alert("Invalid amount.");
+    }
+}
+// Function to get the wallet balance
+function getWalletBalance() {
+  // Assuming wallet balance is stored in localStorage
+  return parseFloat(localStorage.getItem("walletBalance")) || 0;
+}
+
+// Function to update wallet balance display
+function updateWalletDisplay() {
+  var walletBalance = getWalletBalance();
+  document.getElementById("wallet-balance").innerText = `$${walletBalance.toFixed(2)}`;
+}
+
+// Function to add money to the wallet
+function addMoneyToWallet() {
+  var amountToAdd = parseFloat(prompt("Enter amount to add to wallet:", "0"));
+  if (!isNaN(amountToAdd) && amountToAdd > 0) {
+      var walletBalance = getWalletBalance();
+      walletBalance += amountToAdd;
+      localStorage.setItem("walletBalance", walletBalance);
+      updateWalletDisplay();
+      checkWalletBalance();
+  } else {
+      alert("Invalid amount.");
+  }
+}
+
+// Function to check if wallet balance is sufficient for any wishlist item
+function checkWalletBalance() {
+  var walletBalance = getWalletBalance();
+  var heartIcon = document.querySelector("#right_icon .fa-heart");
+  var wishlistNotification = document.getElementById("wishlist-notification");
+
+  // Check if there's at least one item in the wishlist that can be purchased with current wallet balance
+  var isSufficient = wisharr.some(function(item) {
+      return walletBalance >= parseFloat(item.price.replace(/[^\d.-]/g, ''));
+  });
+
+  if (isSufficient && walletBalance > 0) {
+      // Display notification and add class for red dot
+      heartIcon.classList.add("notification");
+      wishlistNotification.style.display = "block";
+      wishlistNotification.innerText = "Let's make your wish come true!";
+  } else {
+      // Remove notification and class for red dot
+      heartIcon.classList.remove("notification");
+      wishlistNotification.style.display = "none";
+      wishlistNotification.innerText = "";
+  }
+}
+
+// Add event listener to the "Add Money" button
+document.getElementById("add-money-button").addEventListener("click", addMoneyToWallet);
+document.getElementById("remove-money-button").addEventListener("click", removeMoneyFromWallet);
+
+
 wisharr.map(function(ele,ind){
 
     var box =document.createElement("div")
@@ -96,3 +169,7 @@ function sendtocart(ele,ind){
 document.getElementById('landingPage').addEventListener('click', function(){
 window.location.href = "../Landingpage/index.html"
 })
+
+// Check wallet balance on page load
+checkWalletBalance();
+updateWalletDisplay();

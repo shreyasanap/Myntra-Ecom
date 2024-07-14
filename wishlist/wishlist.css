@@ -3,6 +3,77 @@
     box-sizing: border-box;
 }
 
+#wishlist-notification {
+    text-align: center;
+    margin-top: 10px;
+    display: none; /* Initially hidden */
+    color: red;
+    font-weight: bold;
+}
+
+#right_icon .fa-heart.notification {
+    position: relative;
+}
+
+#right_icon .fa-heart.notification::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.wallet-container {
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+    margin-left: 10px;
+    /* background-color: #f9f9f9; */
+    width: 100px;
+    text-align: center;
+    float: right;
+
+}
+
+.wallet-container h3 {
+    margin-top: 0;
+}
+
+#wallet-balance {
+    font-weight: bold;
+    color: #333;
+}
+
+#add-money-button {
+    background-color: #ff3f6c;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#add-money-button:hover {
+    background-color: #e83663;
+}
+#remove-money-button {
+    background-color: #f99410;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#add-money-button:hover {
+    background-color: #f99410;
+}
+
+
 body{
     font-size: 1.6rem;
 }
