@@ -1,0 +1,88 @@
+<!-- dozi -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="./dist/main.js"></script>
+    <title>Outfitter</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/palace.png">
+  </head>
+
+  <body>
+    <div id="main" class="container">
+      <!-- this is where you COULD put in the base elements, otherwise need to render dynamically thru JS in '.js' file -->
+      <!-- in frameworks, templates akin to this to be filled would be preferred, automatically done under hood -->
+
+
+      <div class="flex-container">
+        <div class="column">
+          <div id="instructions">
+            <h1>Getting Started:<h1>
+            <h3> 
+              <p>
+                <br/>
+                Please enter a valid In zipcode into the search box to display the current weather conditions in that area.
+                <br/>
+                <br/>
+                Click on the sex to change it.
+                <br/>
+                <br/>
+                Click the clothing icons to show a list of that clothing category to select and try on items. 
+                <br/>
+                <br/>
+                Feel free to select any number of categories you prefer. You can select a new item for the same category to replace it, or remove it to clear the category.
+                <br/>
+                <br/>
+                Now you have a custom outfit for today's weather!
+                
+              
+              </p>
+            </h3>
+          </div>
+        </div>
+        <div class="column">
+          <div id="weather-card" class="card">
+            <div id="weather-input-container">
+                <input type="search" id="weather-input" />
+                <button type="submit" id="search-button">Search</button>
+            </div>
+            <img id="temperature-icon" src="" alt="Weather Icon" />
+            <div id="temperature-text"></div>
+            <div id="location-text"></div>
+            <div id="footer-temperature-container">
+                <div id="min-temperature-text" class="footer-temperature-text"></div>
+                <div id="max-temperature-text" class="footer-temperature-text"></div>
+            </div>
+        </div>
+        
+          
+          <div id="outfit-card" class="card">
+            <div id="toggle-button-container">
+              <button id="toggle-button">MEN</button>
+            </div>
+            <div id="outfit-categories-container"></div>
+          </div>
+        </div> <!-- end of column 1 -->
+        <div class="column"> 
+          <div id="clothing-card" class="card">
+            <ul id="clothing-list"></ul>
+          </div>
+        </div> <!-- end of column 2 -->
+      </div> <!-- end of flex container -->
+    </div> <!-- end of container -->
+
+
+
+
+    <a href="https://github.com/Inkorrect-Code/Outfit-Coordinator.git"><img id="github" src="assets/images/github_drawn_outline.png"></a>
+
+    <a href="https://venmo.com/u/flamvelation"><img id="donate" src="assets/images/donate.png"></a>
+  </body>
+
+</html>

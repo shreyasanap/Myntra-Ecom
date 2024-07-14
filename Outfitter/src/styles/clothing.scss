@@ -1,0 +1,42 @@
+#clothing-card {
+  height: calc(100vh - 300px); // to remove any scrolling of the page
+}
+
+#clothing-list {
+  // can be nested
+  overflow-y: auto;
+  height: 100%; // locks to max height of card
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clothing-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  img.clothing-img {
+    height: 128px;
+    width: auto;
+    border-radius: 64px;
+  }
+
+  .clothing-button {
+    position: relative;
+    right: 0px;
+    margin-left: auto;
+    width: 80px; // adjust as needed
+    height: 50px; // adjust as needed
+    background-color: rgb(121, 119, 119);
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .clothing-text {
+    font-size: 1.2rem;
+    padding-right: 10px;
+  }
+}

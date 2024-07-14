@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+* {
+  font-family: "Source Sans 3", Helvetica, sans-serif;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+.card {
+  margin: 10px;
+  padding: 20px 25px;
+  border-radius: 22px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.container {
+  width: 100%;
+  height: calc(100vh - 240px);
+  margin: 120px auto;
+}
+#instructions {
+  color: gray;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.flex-container .column {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1340px;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
+}
+#github {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+}
+#donate {
+  position: absolute;
+  bottom: 10px;
+  right: 70px;
+  width: 50px;
+}
+#weather-card {
+  background: linear-gradient(to right, #5fdcff, #f86b8c);
+  text-align: center;
+}
+#search-button {
+    margin-left: 10px;
+    font-size: 16px;
+  background-color: #f86b8c;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#temperature-icon {
+  height: 200px;
+}
+#temperature-text {
+  font-size: 3rem;
+}
+#location-text {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+#footer-temperature-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+}
+#outfit-card {
+  background: white;
+  flex: 1;
+}
+#toggle-button-container {
+  text-align: center;
+}
+#toggle-button-container #toggle-button {
+  font-size: 1.2rem;
+  background-color: #797777;
+  border-radius: 20px;
+  width: 100px;
+  height: 40px;
+}
+#toggle-button-container #toggle-button:hover {
+  cursor: pointer;
+}
+.category-item {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.category-icon-container {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.category-icon-container .category-icon-text {
+  font-size: 1.2rem;
+  width: 100px;
+}
+.category-icon-container img.category-icon-img {
+  height: 64px;
+  cursor: pointer;
+}
+.clothing-item-container {
+  text-align: center;
+  flex: 1;
+}
+.clothing-item-container img.clothing-img {
+  height: 128px;
+  width: auto;
+  border-radius: 64px;
+}
+.clothing-item-container .clothing-text {
+  font-size: 1.2rem;
+}
+.clothing-item-container .removeButton {
+  background-color: #f44336;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#clothing-card {
+  height: calc(100vh - 300px);
+}
+#clothing-list {
+  overflow-y: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.clothing-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.clothing-item img.clothing-img {
+  height: 128px;
+  width: auto;
+  border-radius: 64px;
+}
+.clothing-item .clothing-button {
+  position: relative;
+  right: 0px;
+  margin-left: auto;
+  width: 80px;
+  height: 50px;
+  background-color: #797777;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.clothing-item .clothing-text {
+  font-size: 1.2rem;
+  padding-right: 10px;
+}

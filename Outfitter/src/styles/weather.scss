@@ -1,0 +1,37 @@
+// look up how and what to do in this file
+
+#weather-card {
+    background: linear-gradient(to right, #5fdcff, #1b3684);
+    text-align: center;
+    padding: 20px;
+}
+
+#temperature-icon {
+    height: 100px; /* Adjust height as needed */
+    width: auto; /* Ensures icon scales proportionally */
+    margin-bottom: 10px; /* Adds space below the icon */
+}
+
+#search-button {
+    background-color: rgb(121, 119, 119);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+
+#temperature-text {
+    font-size: 3rem; // emphemeral unit, reference default is 16px
+}
+
+#location-text {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+#footer-temperature-container {
+    display: flex;
+    flex-direction: row; // this is default and line not needed but yea
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}

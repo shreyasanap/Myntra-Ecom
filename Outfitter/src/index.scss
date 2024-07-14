@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+* { // star means apply to all
+    font-family: "Source Sans 3", Helvetica, sans-serif; // need ';' here or the code blows up
+    // background-color:#000000;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.card { // applies root/general styling of card class 
+    margin: 10px;
+    padding: 20px 25px;
+    border-radius: 22px;
+    box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.2);
+}
+
+.container { 
+    width: 100.00%;
+    height: calc(100vh - 240px);
+    margin: 120px auto; // vert, hori 
+}
+
+// .instructions-container { // instructions
+//     position: absolute;
+//     top: 50%;
+//     left: 0;
+//     transform: translateX(-50%);
+// }
+
+#instructions {
+    color: grey;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // padding: 40px;
+
+    .column {
+        // flex: 1; // helps to scale the UI to fractions of the total container space
+        width: 1200px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 576px) { // 'bootstrap breakpoints'
+    .container {max-width: 540px;}
+}
+
+@media (min-width: 768px) {
+    .container {max-width: 720px;}
+}
+
+@media (min-width: 992px) {
+    .container {max-width: 960px;}
+}
+
+@media (min-width: 1200px) {
+    .container {max-width: 1140px;}
+}
+
+@media (min-width: 1400px) {
+    .container {max-width: 1340px;}
+}
+
+@media (min-width: 1600px) {
+    .container {max-width: 1540px;}
+}
+
+#github { // github icon
+    position: absolute;
+    bottom: 10px; // move icon 2/3 up the page
+    right: 10px;
+    width: 50px; // adjust as needed
+}
+
+#donate {
+    position: absolute;
+    bottom: 10px; // move icon 2/3 up the page
+    right: 70px;
+    width: 50px; // adjust as needed
+}
+
+
+
+// hub for multiple files if you had multiple 
+@import "./styles/weather.scss";
+@import "./styles/outfit.scss";
+@import "./styles/clothing.scss";
