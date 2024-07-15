@@ -69,17 +69,18 @@ class WeatherRenderer {
       })
       .catch(error => console.error('Error:', error))
   }
-
   displayWeatherData(weatherData) {
-    document.getElementById('temperature-icon').src = weatherData.main.temp > 60 ? '/Outfitter/assets/images/clear.png' : '/Outfitter/assets/images/mist.png'
+    // Adjusted paths assuming images are in the same directory as the HTML file
+    document.getElementById('temperature-icon').src = weatherData.main.temp > 60 ? 'assets/images/clear.png' : 'assets/images/mist.png';
 
-    document.getElementById('temperature-text').innerText = `${Math.round(weatherData.main.temp)}°F`
+    document.getElementById('temperature-text').innerText = `${Math.round(weatherData.main.temp)}°F`;
 
-    document.getElementById('location-text').innerText = weatherData.name
+    document.getElementById('location-text').innerText = weatherData.name;
 
-    document.getElementById('min-temperature-text').innerHTML = `<div>Low</div><div>${Math.round(weatherData.main.temp_min)}°F</div>`
-    document.getElementById('max-temperature-text').innerHTML = `<div>High</div><div>${Math.round(weatherData.main.temp_max)}°F</div>`
-  }
+    document.getElementById('min-temperature-text').innerHTML = `<div>Low</div><div>${Math.round(weatherData.main.temp_min)}°F</div>`;
+    document.getElementById('max-temperature-text').innerHTML = `<div>High</div><div>${Math.round(weatherData.main.temp_max)}°F</div>`;
+}
+
 
   getCategories(weatherData) {
     const mensCategories = []

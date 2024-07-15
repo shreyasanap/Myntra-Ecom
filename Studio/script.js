@@ -16,5 +16,9 @@ document.getElementById('f3Btn').addEventListener('click', function() {
 
 // Event listener for F4 button
 document.getElementById('f4Btn').addEventListener('click', function() {
-    alert('F4 button clicked!');
+    window.location.href = '../3d/home.html';
+});
+
+document.getElementById('f5Btn').addEventListener('click', function() {
+    window.location.href = '../Giveaway/index.html';
 });

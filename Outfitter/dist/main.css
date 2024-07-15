@@ -74,15 +74,17 @@ body {
   width: 50px;
 }
 #weather-card {
-  background: linear-gradient(to right, #5fdcff, #f86b8c);
+  background: linear-gradient(to right, #ffb2e8, #f86b8c);
   text-align: center;
 }
 #search-button {
-    margin-left: 10px;
-    font-size: 16px;
-  background-color: #f86b8c;
-  border-radius: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 0 5px;
+  background-color: rgb(21, 179, 214);
+  border-radius: 15px;
   cursor: pointer;
+  color: white;
 }
 #temperature-icon {
   height: 200px;

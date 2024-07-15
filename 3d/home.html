@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D T-Shirt Customization</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="../Common Files/image/favicon.png">
+    <link rel="stylesheet" href="../Common Files/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="../Common Files/image/myntra-removebg-preview.png" alt="brandLogo" id="landingPage">
+        </div>
+        <ul id="nav_bar">
+            <li><a href="../Homepages/menHomePage.html">men</a></li>
+            <li><a href="../Homepages/womenHomePage.html">women</a></li>
+            <li><a href="#">kids</a></li>
+            <li><a href="../Homepages/homeLiving.html">home & living</a></li>
+            <li><a href="../Customisation/customisation.html">Design</a></li>
+            <li id="studio"><a href="../Studio/studio.html">studio</a><span>new</span></li>
+        </ul> 
+        <div id="search">
+            <input type="text" id="search_bar" placeholder="Search for products, brands and more">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="right_icon">
+            <div id="reggDropdown">
+                <!-- DROPDOWN MENU TO BE CREATED FOR LOGIN AND SIGNUP -->
+              <div id="drop">
+                  <a href="../Profile/profile.html" class="dropList">login</a>
+                  <a href="../Profile/signup.html" class="dropList">sign up</a>
+              </div>
+    
+              <i class="fa-regular fa-user"></i>
+              <span>profile</span>
+          </div>
+            <div>
+                <i class="fa-regular fa-heart"></i>
+                <span>wishlist</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>bag</span>
+            </div>
+        </div>
+    
+                <!-- TOGGLE MENU -->
+                <div id="toggle">
+                    <i class='bx bx-menu dropbtn' onclick="myFunction()"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <div class="top">
+                            <a href="../Homepages/menHomePage.html">men</a>
+                            <a href="../Homepages/womenHomePage.html">women</a>
+                            <a href="#">kids</a>
+                            <a href="../Homepages/homeLiving.html">home & living</a>
+                            <a href="../Customisation/customisation.html">design</a>
+                            <a href="../Studio/studio.html">studio</a>
+                        </div> 
+                        <div class="bottom">
+                            <i class="fa-regular fa-user fa_user" id="profile"></i>
+                            <i class="fa-regular fa-heart fa_wishlist"></i>
+                            <i class="fa-solid fa-bag-shopping fa_cart"></i>
+                        </div>           
+                    </div>
+                </div>
+    
+    </header>
+    <div class="controls">
+    
+        <div class="colors">
+            <div class="color" data-color="#cccccc" style="background-color: #cccccc;"></div>
+            <div class="color" data-color="#f0c300" style="background-color: #f0c300;"></div>
+            <div class="color" data-color="#8bc34a" style="background-color: #8bc34a;"></div>
+            <div class="color" data-color="#673ab7" style="background-color: #673ab7;"></div>
+            <div class="color" data-color="#ff5722" style="background-color: #ff5722;"></div>
+            <div class="color" data-color="#000000" style="background-color: #000000;"></div>
+            <div class="color" data-color="#00ff00" style="background-color: #00ff00;"></div>
+            <div class="color" data-color="#ff00ff" style="background-color: #ff00ff;"></div>
+            <div class="color" data-color="#00ffff" style="background-color: #00ffff;"></div>
+        </div>
+        <button id="download">DOWNLOAD</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+<script src="../Common Files/headerMenu.js"></script>
+<script src="../Common Files/corousel.js"></script>
+<script src="../Common Files/hyperlinks.js"></script>

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #ffffff; /* Set background color to white */
+}
+
+.controls {
+    position: absolute;
+    top: 140px;
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1; /* Ensure controls are on top of the 3D canvas */
+}
+
+.colors {
+    display: flex;
+    gap: 5px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}

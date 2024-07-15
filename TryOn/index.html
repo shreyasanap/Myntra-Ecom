@@ -1,169 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Try-On</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
-      *,
-      *::before,
-      *::after {
-        padding: 0;
-        margin: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Try-On</title>
+  <link rel="shortcut icon" type="image/png" href="../Common Files/image/favicon.png" />
+  <link rel="stylesheet" href="../Common Files/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+    *, *::before, *::after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-      body {
-        font-family: "Source Sans 3", Tahoma, Geneva, Verdana, sans-serif;
-        padding: 1rem;
-      }
-      .main {
+    body {
+      margin-top: 150px;
+      font-family: "Source Sans 3", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    .main {
+      max-width: 600px;
+      background-color: #fff;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 2rem auto;
+    }
+
+    h1 {
+      padding-bottom: 1rem;
+      color: #333;
+      text-align: center;
+      font-size: 3.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .label-text {
+      font-weight: 600;
+      color: #555;
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .required-marker {
+      color: tomato;
+    }
+
+    input[type="file"],
+    select,
+    input[type="text"] {
+      height: 2.5rem;
+      padding: 0.1rem;
+      font-size: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      background-color: #fafafa;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="file"]:focus,
+    select:focus,
+    input[type="text"]:focus {
+      border-color: #007bff;
+    }
+
+    button {
+      height: 2.5rem;
+      border: none;
+      outline: none;
+      background-color: #007bff;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 600;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #resultContainer img {
+      max-width: 100%;
+      margin-top: 1rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #logo img {
+      height: 40px;
+    }
+
+    #nav_bar {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    #nav_bar li {
+      position: relative;
+    }
+
+    #nav_bar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    #nav_bar a:hover {
+      color: #007bff;
+    }
+
+    #studio span {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 1.5rem;
+    }
+
+    #search {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    #search_bar {
+      height: 2rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      outline: none;
+    }
+
+    #search_icon {
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    #right_icon {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    #right_icon div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    #toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      #toggle {
         display: block;
-        flex-direction: column;
-        padding: 1.5rem;
-        border: 1px solid gray;
-        border-radius: 0.5rem;
-
-
-        /* constrain the width and center the container */
-        width: auto;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 15rem;
       }
 
-      h1 {
-        padding-bottom: 2rem;
+      #nav_bar {
+        display: none;
       }
 
-      form {
+      #myDropdown {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
         gap: 1rem;
       }
 
-      form .form-field {
+      .dropdown-content .top {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
       }
 
-      form .form-field .label-text {
-        font-weight: 500;
+      .dropdown-content .bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
       }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="logo">
+      <img src="../Common Files/image/myntra-removebg-preview.png" alt="brandLogo" id="landingPage" />
+    </div>
+    <ul id="nav_bar">
+      <li><a href="../Homepages/menHomePage.html">men</a></li>
+      <li><a href="../Homepages/womenHomePage.html">women</a></li>
+      <li><a href="#">kids</a></li>
+      <li><a href="../Homepages/homeLiving.html">home & living</a></li>
+      <li><a href="../Customisation/customisation.html">Design</a></li>
+      <li id="studio">
+        <a href="../Studio/studio.html">studio</a>
+      </li>
+    </ul>
+    <div id="search">
+      <input type="text" id="search_bar" placeholder="Search for products, brands and more" />
+      <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+    </div>
+    <div id="right_icon">
+      <div id="reggDropdown">
+        <!-- DROPDOWN MENU TO BE CREATED FOR LOGIN AND SIGNUP -->
+        <div id="drop">
+          <a href="../Profile/profile.html" class="dropList">login</a>
+          <a href="../Profile/signup.html" class="dropList">sign up</a>
+        </div>
+        <i class="fa-regular fa-user"></i>
+        <span>profile</span>
+      </div>
+      <div>
+        <i class="fa-regular fa-heart"></i>
+        <span>wishlist</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>bag</span>
+      </div>
+    </div>
+    <!-- TOGGLE MENU -->
+    <div id="toggle">
+      <i class="bx bx-menu dropbtn" onclick="myFunction()"></i>
+      <div id="myDropdown" class="dropdown-content">
+        <div class="top">
+          <a href="../Homepages/menHomePage.html">men</a>
+          <a href="../Homepages/womenHomePage.html">women</a>
+          <a href="#">kids</a>
+          <a href="../Homepages/homeLiving.html">home & living</a>
+          <a href="../Customisation/customisation.html">design</a>
+          <a href="../Studio/studio.html">studio</a>
+        </div>
+        <div class="bottom">
+          <i class="fa-regular fa-user fa_user" id="profile"></i>
+          <i class="fa-regular fa-heart fa_wishlist"></i>
+          <i class="fa-solid fa-bag-shopping fa_cart"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <h1>Try-On</h1>
 
-      form .form-field .label-text .required-marker {
-        color: tomato;
-      }
+    <form id="tryOnForm">
+      <!-- User Image -->
+      <label class="form-field">
+        <span class="label-text">
+          User Image
+          <span class="required-marker">*</span>
+        </span>
+        <input name="userImage" type="file" required />
+      </label>
 
-      input,
-      select {
-        height: 2rem;
-        padding: 0.25rem 0.5rem;
-      }
+      <!-- Cloth Image -->
+      <label class="form-field">
+        <span class="label-text">
+          Cloth Image
+          <span class="required-marker">*</span>
+        </span>
+        <input name="clothImage" type="file" required />
+      </label>
 
-      form button {
-        height: 2rem;
-        border: none;
-        outline: none;
-        background-color: black;
-        text-transform: uppercase;
-        color: white;
-        font-weight: 500;
-        border-radius: 2px;
-        cursor: pointer;
-      }
+      <!-- Category -->
+      <label class="form-field">
+        <span class="label-text">
+          Category
+          <span class="required-marker">*</span>
+        </span>
+        <select name="category">
+          <option value="1">Upper Body</option>
+          <option value="2">Lower Body</option>
+          <option value="3">Dresses</option>
+          <option value="4">Full Body</option>
+          <option value="5">Hair</option>
+        </select>
+      </label>
 
-      #resultContainer img {
-        max-width: 100%;
-        margin-top: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="main">
-      <h1>Try-On</h1>
+      <!-- Caption (Optional) -->
+      <label class="form-field">
+        <span class="label-text">Caption</span>
+        <input name="caption" type="text" placeholder="Describe the cloth (optional)" />
+      </label>
 
-      <form id="tryOnForm">
-        <!-- User Image -->
-        <label class="form-field">
-          <span class="label-text">
-            User Image
-            <span class="required-marker">*</span>
-          </span>
-          <input name="userImage" type="file" required />
-        </label>
+      <button>Try On Now</button>
+    </form>
+    <div id="resultContainer"></div>
+  </main>
 
-        <!-- Cloth Image -->
-        <label class="form-field">
-          <span class="label-text">
-            Cloth Image
-            <span class="required-marker">*</span>
-          </span>
-          <input name="clothImage" type="file" required />
-        </label>
+  <script defer>
+    // CONSTANTS
+    const BACKEND_BASE_URL = "http://127.0.0.1:5000";
+    const tryOnForm = document.querySelector("#tryOnForm");
 
-        <!-- Category -->
-        <label class="form-field">
-          <span class="label-text">
-            Category
-            <span class="required-marker">*</span>
-          </span>
-          <select name="category">
-            <option value="1">Upper Body</option>
-            <option value="2">Lower Body</option>
-            <option value="3">Dresses</option>
-            <option value="4">Full Body</option>
-            <option value="5">Hair</option>
-          </select>
-        </label>
+    async function handleSubmit(event) {
+      event.preventDefault();
 
-        <!-- Caption (Optional) -->
-        <label class="form-field">
-          <span class="label-text">Caption</span>
-          <input
-            name="caption"
-            type="text"
-            placeholder="Describe the cloth (optional)"
-          />
-        </label>
+      try {
+        const formData = new FormData(tryOnForm);
+        const response = await fetch(`${BACKEND_BASE_URL}/try-on`, {
+          method: "POST",
+          body: formData,
+        });
 
-        <button>Try On Now</button>
-      </form>
-      <div id="resultContainer"></div>
-    </main>
-
-    <script defer>
-      // CONSTANTS
-      const BACKEND_BASE_URL = "http://127.0.0.1:5000";
-      const tryOnForm = document.querySelector("#tryOnForm");
-
-      async function handleSubmit(event) {
-        event.preventDefault();
-
-        try {
-          const formData = new FormData(tryOnForm);
-          const response = await fetch(`${BACKEND_BASE_URL}/try-on`, {
-            method: "POST",
-            body: formData,
-          });
-
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-
-          const result = await response.json();
-          console.log(result);
-          const resultContainer = document.querySelector("#resultContainer");
-          resultContainer.innerHTML = `<img src="${result.result}" alt="Try-On Result" />`;
-        } catch (error) {
-          console.error("Error:", error);
-          // Handle error display if needed
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-      }
 
-      tryOnForm.addEventListener("submit", handleSubmit);
-    </script>
-  </body>
+        const result = await response.json();
+        console.log(result);
+        const resultContainer = document.querySelector("#resultContainer");
+        resultContainer.innerHTML = `<img src="${result.result}" alt="Try-On Result" />`;
+      } catch (error) {
+        console.error("Error:", error);
+        // Handle error display if needed
+      }
+    }
+
+    tryOnForm.addEventListener("submit", handleSubmit);
+  </script>
+</body>
 </html>
