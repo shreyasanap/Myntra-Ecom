@@ -62,8 +62,8 @@ Go inside the cloth-recommendation folder
 ## 💡Run the Application:
 ```
 1. run index.html (Inside the LandingPage folder)
-2. start the server : `python server.py` (Inside the TryOn)
-3. `streamlit run app.py` (Inside the Cloth-Recommendation folder)
+2. start the server : *python server.py* (Inside the TryOn)
+3. *streamlit run app.py* (Inside the Cloth-Recommendation folder)
 ```
 
 ## 🤝 Contributing
