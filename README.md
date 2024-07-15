@@ -78,6 +78,5 @@ We welcome contributions to enhance this project. Please follow these steps:
 
  ## Additional Stuff 🏝️:
  1. You have put these drive file inside the Cloth-Recommendation folder in order to run this cloth recommendation as these files are too large to put on github
-
-
+https://teensy.tech/additional
 
