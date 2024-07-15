@@ -7,6 +7,7 @@
     <title>Online Shopping for Women - Shop For Women Clothes, Shoes, Bags & More</title>
     <link rel="shortcut icon" type="image/png" href="../Common Files/image/favicon.png">
     <link rel="stylesheet" href="../Common Files/style.css">
+    <link rel="stylesheet" href="customisation.css">
     <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -22,7 +23,7 @@
             <li><a href="../Homepages/womenHomePage.html">women</a></li>
             <li><a href="#">kids</a></li>
             <li><a href="../Homepages/homeLiving.html">home & living</a></li>
-            <li><a href="../Customisation/customisation.html">design</a></li>
+            <li><a href="../Customisation/customisation.html">Design</a></li>
             <li id="studio"><a href="../Studio/studio.html">studio</a><span>new</span></li>
         </ul> 
         <div id="search">
@@ -55,10 +56,10 @@
                     <i class='bx bx-menu dropbtn' onclick="myFunction()"></i>
                     <div id="myDropdown" class="dropdown-content">
                         <div class="top">
-                            <a href="menHomePage.html">men</a>
-                            <a href="womenHomePage.html">women</a>
+                            <a href="../Homepages/menHomePage.html">men</a>
+                            <a href="../Homepages/womenHomePage.html">women</a>
                             <a href="#">kids</a>
-                            <a href="homeLiving.html">home & living</a>
+                            <a href="../Homepages/homeLiving.html">home & living</a>
                             <a href="../Customisation/customisation.html">design</a>
                             <a href="../Studio/studio.html">studio</a>
                         </div> 
@@ -72,108 +73,19 @@
 
     </header>
 
+    <h3 class="customhead">Contribute your Customisation <span class="wishcount"> </span> </h3>
 
-    <!-- COROUSEL SECTION -->
-    <div class="slider">
-        <div id="slides">
-          <!--radio buttons start-->
-          <input type="radio" name="radio-btn" id="radio1">
-          <input type="radio" name="radio-btn" id="radio2">
-          <input type="radio" name="radio-btn" id="radio3">
-          <input type="radio" name="radio-btn" id="radio4">
-
-          <!--slide images start-->
-         <!-- slider images created using js-->
+    <div class="container">
+        <h1>Designs</h1>
+        <button id="addDesignButton">Add your design</button>
+        <div id="designs">
+            <!-- <div class="design-card">Design 1</div>
+            <div class="design-card">Design 2</div>
+            <div class="design-card">Design 3</div> -->
         </div>
-
-        <!--manual navigation start-->
-        <div class="navigation-manual">
-          <label for="radio1" class="manual-btn"></label>
-          <label for="radio2" class="manual-btn"></label>
-          <label for="radio3" class="manual-btn"></label>
-          <label for="radio4" class="manual-btn"></label>
-        </div>
-      </div>
-
-
-      <!-- TOP BRANDS DISPLAY 1 HEADING -->
-      <h1 class="brand_heading">biggest deals on top brands</h1>
-      <div id="topBrand_women" class="container">
-          <div><img src="https://bit.ly/3Dk3plz" alt="brand1"></div>
-          <div><img src="https://bit.ly/3NyBqDe" alt="brand2"></div>
-          <div><img src="https://bit.ly/3qN2Ewp" alt="brand3"></div>
-          <div><img src="https://bit.ly/3NyivIY" alt="brand4"></div>
-          <div><img src="https://bit.ly/3NwbdVT" alt="brand5"></div>
-          <div><img src="https://bit.ly/3NrgMVT" alt="brand6"></div>
-          <div class="forWeb"><img src="https://bit.ly/3IJeKg4" alt="brand7"></div>
-          <div class="forWeb"><img src="https://bit.ly/3DlD3zC" alt="brand8"></div>
-          <div class="forWeb"><img src="https://bit.ly/36Ymhu7" alt="brand9"></div>
-          <div class="forWeb"><img src="https://bit.ly/3IN5iZ5" alt="brand10"></div>
-      </div>
-
-
-       <!-- TOP CATEGORIES SECTION -->
-       <h1 class="brand_heading">categories to bag</h1>
-       <div id="categoryBag_women" class="container categoryBag_women"></div>
-
-
-       <!-- TOP BRAND DISPLAY 2 HEADING -->
-       <h1 class="brand_heading">explore top brands</h1>
-       <div id="explore_more_women" class="display container explore_more_women"></div>
-
-         <!-- CATEGORIES DISPLAY 2 -->
-       <h1 class="brand_heading">trending in western wear</h1>
-         <div class="container builder">
-            <div><img src="https://bit.ly/3wMju21" alt="category1"></div>
-            <div><img src="https://bit.ly/3NvX0ID" alt="category2"></div>
-            <div><img src="https://bit.ly/3tMNJ75" alt="category3"></div>
-            <div><img src="https://bit.ly/3qJVBV4" alt="category4"></div>
-            <div><img src="https://bit.ly/3uBoKCX" alt="category5"></div>
-         </div>
-
-         <!-- CATEGORIES DISPLAY 3 -->
-         <h1 class="brand_heading">trending in indian wear</h1>
-         <div class="container builder">
-            <div><img src="https://bit.ly/3K69wN7" alt="category1"></div>
-            <div><img src="https://bit.ly/3iODr09" alt="category2"></div>
-            <div><img src="https://bit.ly/3IOGpw4" alt="category3"></div>
-            <div><img src="https://bit.ly/38furzf" alt="category4"></div>
-            <div><img src="https://bit.ly/36I8HeC" alt="category5"></div>
-         </div>
-
-
-          <!-- CATEGORIES DISPLAY 4 -->
-          <h1 class="brand_heading">trending in sports wear</h1>
-          <div class="container builder">
-             <div><img src="https://bit.ly/3K69y7H" alt="category1"></div>
-             <div class="forMob"><img src="https://bit.ly/3iN4YPn" alt="category2"></div>
-             <div><img src="https://bit.ly/36YoFkz" alt="category3"></div>
-             <div class="forWeb"><img src="https://bit.ly/3wINHPL" alt="category4"></div>
-             <div class="forWeb"><img src="https://bit.ly/3ISRhsO" alt="category5"></div>
-          </div>
-
-
-          <!-- CATEGORIES DISPLAY 5 -->
-          <h1 class="brand_heading">trending in footwear</h1>
-          <div class="container builder">
-             <div><img src="https://bit.ly/3Lm8hJN" alt="category1"></div>
-             <div><img src="https://bit.ly/3wOjfDM" alt="category2"></div>
-             <div class="forMob"><img src="https://bit.ly/3uCXq7p" alt="category3"></div>
-             <div class="forWeb"><img src="https://bit.ly/36VIvx8" alt="category4"></div>
-             <div class="forWeb"><img src="https://bit.ly/3IR4WR4" alt="category5"></div>
-          </div>
-
-
-          <!-- CATEGORIES DISPLAY 6 -->
-          <h1 class="brand_heading">trending in accessories</h1>
-          <div class="container builder">
-             <div><img src="https://bit.ly/3DnaNMZ" alt="category1"></div>
-             <div><img src="https://bit.ly/3wN8xxt" alt="category2"></div>
-             <div class="forMob"><img src="https://bit.ly/3LnQNwv" alt="category3"></div>
-             <div class="forWeb"><img src="https://bit.ly/35jAgu6" alt="category4"></div>
-             <div class="forWeb"><img src="https://bit.ly/3IN87cD" alt="category5"></div>
-          </div>
-
+        <div id="newDesigns" class="container"></div>
+    </div>
+    
 
           <!-- FOOTER SECTION -->
           <footer>
@@ -267,7 +179,7 @@
           </footer>
 
 
-    <script src="../Common Files/women.js"></script>
+    <script src="../Customisation/customisation.js"></script>
     <script src="../Common Files/headerMenu.js"></script>
     <script src="../Common Files/corousel.js"></script>
     <script src="../Common Files/hyperlinks.js"></script>

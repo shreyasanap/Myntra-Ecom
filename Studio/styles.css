@@ -55,6 +55,7 @@ main {
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    margin-top: 15rem ;
 }
 
 .container {
