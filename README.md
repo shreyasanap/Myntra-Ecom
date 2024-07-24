@@ -1,4 +1,4 @@
-# Myntra WeforShe Hackathon🤠
+# Myntra - Ecommerce Website🤠
 
 Our project aims to revolutionize the online shopping experience by creating an intelligent fashion recommendation system that pairs tops with appropriate bottoms. Our solution ensures that customers find the perfect match, enhancing their shopping journey with ease and style.
 
